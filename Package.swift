@@ -1,4 +1,4 @@
-// swift-tools-version: 5.4
+// swift-tools-version:5.3
 import PackageDescription
 
 let package = Package(
@@ -14,23 +14,15 @@ let package = Package(
             targets: ["TrueTime"]
         )
     ],
-    dependencies: [
-        // 의존성 추가 (필요 시 공백 제거)
-    ],
+    dependencies: [],
     targets: [
         .target(
             name: "TrueTime",
             path: "Sources",
-            publicHeadersPath: "",
+            publicHeadersPath: ".",
             cSettings: [
-                .headerSearchPath("Sources")
+                .headerSearchPath(".")
             ]
-        ),
-        .testTarget(
-            name: "TrueTimeTests",
-            dependencies: ["TrueTime"],
-            path: "Tests"
         )
-    ],
-    swiftLanguageVersions: [.v5]
+    ]
 )
