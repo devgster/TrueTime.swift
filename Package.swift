@@ -11,10 +11,18 @@ let package = Package(
     products: [
         .library(
             name: "TrueTime",
-            targets: ["TrueTime"]
-        )
+            targets: ["TrueTime"]),
+        .library(
+            name: "CTrueTime",
+            targets: ["CTrueTime"])
+        
     ],
-    dependencies: [],
+    dependencies: [
+        .package(url: "https://github.com/Quick/Nimble.git", .upToNextMajor(from: "8.0.1")),
+        .package(url: "https://github.com/Quick/Quick.git", .upToNextMajor(from: "2.1.0")),
+        .package(url: "https://github.com/typelift/SwiftCheck.git", .upToNextMajor(from: "0.12.0")),
+    ],
+    
     targets: [
         // Objective-C 모듈 타겟
         .target(
@@ -28,8 +36,8 @@ let package = Package(
         // Swift 모듈 타겟
         .target(
             name: "TrueTime",
-            dependencies: ["CTrueTime"],
-            path: "Sources/Swift"
-        )
+            dependencies: ["CTrueTime"]),
+        .systemLibrary(name: "CTrueTime")
+        
     ]
 )
