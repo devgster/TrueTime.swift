@@ -22,13 +22,8 @@ let package = Package(
             path: "Sources/CTrueTime",
             publicHeadersPath: "include",
             cSettings: [
-                .headerSearchPath("Sources/CTrueTime/include"),
-                .define("USE_OBJC_CODE"),
-                .define("HAVE_TIMEGM", to: "1"),
-                .define("HAVE_CLOCK_GETTIME", to: "1")
-            ],
-            linkerSettings: [
-                .linkedLibrary("m")
+                .headerSearchPath("include"),
+                .define("USE_OBJC_CODE")
             ]
         ),
         // Swift 모듈 타겟
