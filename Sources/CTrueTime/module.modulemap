@@ -1,4 +1,5 @@
 module CTrueTime [system] {
-  header "ntp_types.h"
-  export *
+    umbrella header "ntp_types.h"
+    export *
+    module * { export * }
 }
