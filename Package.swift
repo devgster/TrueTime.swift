@@ -20,9 +20,9 @@ let package = Package(
         .target(
             name: "CTrueTime",
             path: "Sources/CTrueTime",
-            publicHeadersPath: ".",
+            publicHeadersPath: "include",
             cSettings: [
-                .headerSearchPath("Sources/CTrueTime"),
+                .headerSearchPath("Sources/CTrueTime/include"),
                 .define("USE_OBJC_CODE"),
                 .define("HAVE_TIMEGM", to: "1"),
                 .define("HAVE_CLOCK_GETTIME", to: "1")
