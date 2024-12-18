@@ -22,7 +22,7 @@ let package = Package(
             path: "Sources/CTrueTime",
             publicHeadersPath: ".",
             cSettings: [
-                .headerSearchPath("."),
+                .headerSearchPath("Sources/CTrueTime"),
                 .define("USE_OBJC_CODE") // 필요한 경우 정의 플래그 추가
             ]
         ),
