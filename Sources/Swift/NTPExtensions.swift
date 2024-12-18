@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CTrueTime
 
 public extension timeval {
     static func uptime() -> timeval {
@@ -94,7 +95,7 @@ extension ByteRepresentable {
 extension ntp_packet_t: ByteRepresentable {}
 extension sockaddr_in: ByteRepresentable {}
 extension sockaddr_in6: ByteRepresentable {}
-extension sockaddr_in6: CustomStringConvertible {
+extension sockaddr_in6: @retroactive CustomStringConvertible {
     public var description: String {
         var buffer = [Int8](repeating: 0, count: Int(INET6_ADDRSTRLEN))
         var addr = sin6_addr
@@ -106,7 +107,7 @@ extension sockaddr_in6: CustomStringConvertible {
     }
 }
 
-extension sockaddr_in: CustomStringConvertible {
+extension sockaddr_in: @retroactive CustomStringConvertible {
     public var description: String {
         let host = String(cString: inet_ntoa(sin_addr))
         let port = Int(sin_port)

@@ -1,5 +1,0 @@
-module CTrueTime {
-    umbrella header "ntp_types.h"
-    export *
-    module * { export * }
-}
