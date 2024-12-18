@@ -23,7 +23,12 @@ let package = Package(
             publicHeadersPath: ".",
             cSettings: [
                 .headerSearchPath("Sources/CTrueTime"),
-                .define("USE_OBJC_CODE") // 필요한 경우 정의 플래그 추가
+                .define("USE_OBJC_CODE"),
+                .define("HAVE_TIMEGM", to: "1"),
+                .define("HAVE_CLOCK_GETTIME", to: "1")
+            ],
+            linkerSettings: [
+                .linkedLibrary("m")
             ]
         ),
         // Swift 모듈 타겟
