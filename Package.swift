@@ -23,17 +23,13 @@ let package = Package(
             publicHeadersPath: "include",
             cSettings: [
                 .headerSearchPath("include"),
-                .define("USE_OBJC_CODE")
             ]
         ),
         // Swift 모듈 타겟
         .target(
             name: "TrueTime",
             dependencies: ["CTrueTime"],
-            path: "Sources/Swift",
-            swiftSettings: [
-                .define("SWIFT_PACKAGE")
-            ]
+            path: "Sources/Swift"
         )
     ]
 )
