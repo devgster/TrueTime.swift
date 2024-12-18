@@ -35,7 +35,10 @@ let package = Package(
         .target(
             name: "TrueTime",
             dependencies: ["CTrueTime"],
-            path: "Sources/Swift"
+            path: "Sources/Swift",
+            swiftSettings: [
+                .define("SWIFT_PACKAGE")
+            ]
         )
     ]
 )
