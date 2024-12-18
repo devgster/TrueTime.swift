@@ -20,9 +20,9 @@ let package = Package(
         .target(
             name: "CTrueTime",
             path: "Sources/CTrueTime",
-            publicHeadersPath: "include",
+            publicHeadersPath: ".",
             cSettings: [
-                .headerSearchPath("include"),
+                .headerSearchPath("."),
                 .define("USE_OBJC_CODE") // 필요한 경우 정의 플래그 추가
             ]
         ),
